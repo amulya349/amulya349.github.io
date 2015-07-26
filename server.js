@@ -11,3 +11,8 @@ console.log('Listening at http://localhost:' + port);
 app.get('/', function(req, res){
 	res.sendFile(path.join(__dirname, 'index.html'));
 })
+
+app.get('/getmyip', function(req, res){
+	var ip = req.connection.remoteAddress;
+	res.send("Your IP Address is : "+ip)
+})
